@@ -1,0 +1,8 @@
+# kill dotnet 
+$ taskkill /F /IM dotnet.exe
+
+# open vscode in current directory/project
+$ code .
+
+# run server in watch mode / developer mode
++ dotnet watch run 
