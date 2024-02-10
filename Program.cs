@@ -1,4 +1,11 @@
+using System;
+using dotnet_web_mvc_project_template.Lib;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
+
+DotEnv.Load();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -20,8 +27,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
