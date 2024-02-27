@@ -1,16 +1,18 @@
 ﻿using System.Diagnostics;
-using dotnet_web_mvc_project_template.Database;
-using dotnet_web_mvc_project_template.Models;
+using BHMS.Database;
+using BHMS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace dotnet_web_mvc_project_template.Controllers;
+namespace BHMS.Controllers;
 
-public class HomeController : Controller
+[Authorize]
+public class DashboardController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<DashboardController> _logger;
     private readonly DatabaseManager _dbManager = new DatabaseManager();
 
-    public HomeController(ILogger<HomeController> logger)
+    public DashboardController(ILogger<DashboardController> logger)
     {
         _logger = logger;
     }

@@ -1,6 +1,6 @@
 using MySqlConnector;
 
-namespace dotnet_web_mvc_project_template.Database
+namespace BHMS.Database
 {
     public class DatabaseConnection
     {

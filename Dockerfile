@@ -6,18 +6,18 @@ EXPOSE 80
 # Copy the published web application files to the container
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["dotnet-web-mvc-project-template.csproj", "."]
-RUN dotnet restore "dotnet-web-mvc-project-template.csproj"
+COPY ["BHMS.csproj", "."]
+RUN dotnet restore "BHMS.csproj"
 COPY . .
 WORKDIR "/src"
-RUN dotnet build "dotnet-web-mvc-project-template.csproj" -c Release -o /app/build
+RUN dotnet build "BHMS.csproj" -c Release -o /app/build
 
 # Publish the web application
 FROM build AS publish
-RUN dotnet publish "dotnet-web-mvc-project-template.csproj" -c Release -o /app/publish
+RUN dotnet publish "BHMS.csproj" -c Release -o /app/publish
 
 # Build runtime image
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "dotnet-web-mvc-project-template.dll"]
+ENTRYPOINT ["dotnet", "BHMS.dll"]

@@ -1,9 +1,12 @@
 ﻿using System.Diagnostics;
-using dotnet_web_mvc_project_template.Models;
+using BHMS.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
-namespace dotnet_web_mvc_project_template.Controllers;
 
+namespace BHMS.Controllers;
+
+[Authorize]
 public class AboutController : Controller
 {
     private readonly ILogger<AboutController> _logger;
@@ -16,13 +19,5 @@ public class AboutController : Controller
     public IActionResult Index()
     {
         return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(
-            new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }
-        );
     }
 }

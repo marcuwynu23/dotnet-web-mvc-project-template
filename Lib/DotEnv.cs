@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace dotnet_web_mvc_project_template.Lib
+namespace BHMS.Lib
 {
     public static class DotEnv
     {

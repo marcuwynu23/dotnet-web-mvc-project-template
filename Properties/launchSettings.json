@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "dotnet_web_mvc_project_template": {
+    "BHMS": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

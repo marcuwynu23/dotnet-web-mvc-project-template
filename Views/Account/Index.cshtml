@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Account";
+}
+
+<div class="container bg-white p-4">
+    <p class="fs-5 fw-bold">Account</p>
+
+    <!-- Update Account Information Form -->
+    <form method="post">
+        <!-- Add form fields for updating account information -->
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <!-- Add more form fields for other account details -->
+        
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+    <!-- Logout Section -->
+    <div class="mt-4">
+       <p class="fs-6 fw-bold">Logout Account</p>
+        <a  asp-area="" asp-controller="login" asp-action="Logout">
+            <i class="fas fa-exit"></i> Logout <!-- Example icon: chart-bar -->
+        </a>
+    </div>
+</div>
